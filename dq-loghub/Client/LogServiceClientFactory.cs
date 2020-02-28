@@ -8,16 +8,16 @@ namespace dq_loghub.Client
 {
     public class LogServiceClientFactory
     {
-        //private static string endpoint = "cn-hangzhou.log.aliyuncs.com";
-        //private static string projectName = "net-project-test";
-        //private static string accessKeyId = "****";
-        //private static string accessKeySecret = "****";
+        private static string endpoint = "cn-hangzhou.log.aliyuncs.com";
+        private static string projectName = "net-project-test";
+        private static string accessKeyId = "****";
+        private static string accessKeySecret = "****";
 
-        private static string endpoint = "<你的外网域名>";
-        private static string projectName = "<你的项目名称>";
-        private static string accessKeyId = "<访问阿里云API的密钥Id>";
-        private static string accessKeySecret = "<访问阿里云API的密钥Secret>";
-        private static string logstore = "<日志库名称>";
+        //private static string endpoint = "<你的外网域名>";
+        //private static string projectName = "<你的项目名称>";
+        //private static string accessKeyId = "<访问阿里云API的密钥Id>";
+        //private static string accessKeySecret = "<访问阿里云API的密钥Secret>";
+        //private static string logstore = "<日志库名称>";
 
 
         public static ILogServiceClient BuildSimpleClient()

@@ -17,7 +17,7 @@ namespace dq_loghub.Controllers
     {
         // GET: api/Log
         [HttpGet]
-        public String Get()
+        public  IActionResult Get()
         {
             // 1. 构建 `ILogServiceClient` 实例：
             var client = LogServiceClientFactory.BuildSimpleClient();
@@ -50,15 +50,15 @@ namespace dq_loghub.Controllers
             Console.WriteLine($"首条日志：{result.Logs.FirstOrDefault()}");
 
             //直接返回String数据 方便测试
-            return $"RequestId：{response.RequestId}" + $"日志总数：{result.Count}" + $"首条日志：{result.Logs.FirstOrDefault()}";
-
+            //return $"RequestId：{response.RequestId}" + $"日志总数：{result.Count}" + $"首条日志：{result.Logs.FirstOrDefault()}";
+            return Ok($"RequestId：{response.RequestId}" + $"日志总数：{result.Count}" + $"首条日志：{result.Logs.FirstOrDefault()}");
         }
 
 
 
         // POST: api/Log
         [HttpPost]
-        public string Post()
+        public IActionResult Post()
         {
             // 1. 构建 `ILogServiceClient` 实例：
             var client = LogServiceClientFactory.BuildSimpleClient();
@@ -115,8 +115,9 @@ namespace dq_loghub.Controllers
             string logstore = "net-logstore";
             var response = client.PostLogStoreLogsAsync(new PostLogsRequest(logstore, logGroupInfo));
 
+
             // 该方法无返回值必要，success仅为方便测试
-            return "success";
+            return Ok("success");
         }
 
 
